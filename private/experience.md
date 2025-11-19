@@ -18,23 +18,30 @@ $q_1 = (w_1, \vec{v_1}), q_2 = (w_2, \vec{v_2}), p = q_1 q_2$
 $p.w = w_1 w_2 - \vec{v_1} \cdot \vec{v_2}$
 $p.v = w_1 \vec{v_2} + w_2 \vec{v_1} + \vec{v_1} \times \vec{v_2}$
 
+## 牛顿法
+$F(x + \Delta x) \approx F(x) + \frac{\partial F}{\partial x} \Delta x = 0$
+
 # simulate
 ## PBD
-```python
-x_old = x
-for _ in range(JacobiIters):
-    for i in range(len(vertex)):
-        x_tmp[i] = 0
-        n[i] = 0
-    for e in range(len(edges)):
-        i = e[0]
-        j = e[1]
-        x_ij = x[i] - x[j]
-        x_tmp[i] += x[i] - 0.5 * (x_ij.len() - L[e]) * (x_ij / x_ij.len())
-        x_tmp[j] += x[i] + 0.5 * (x_ij.len() - L[e]) * (x_ij / x_ij.len())
-
-for i in range(len(vertex)):
-    v[i] += (x[i] - x_old[i]) / delta_t
-```
+![](../assets/private/pbd_1.png)
+![](../assets/private/pbd_2.png)
+![](../assets/private/pbd_3.png)
+$C(p_1, p_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2} - d = |p_1 - p_2| - d$
+$\nabla_{p_1} C = (\frac{\partial C}{\partial x_1}, \frac{\partial C}{\partial y_1}, \frac{\partial C}{\partial z_1})$
+$\frac{\partial C}{\partial x_1} = \frac{x_1 - x_2}{|p_1 - p_2|}$
+$\nabla_{p_1} C = \frac{1}{|p_1 - p_2|}(x_1 - x_2, y_1 - y_2, z_1 - z_2) = \frac{p_1 - p_2}{|p_1 - p_2|}$
+![](../assets/private/pbd_4.png)
+![](../assets/private/pbd_5.png)
 
 ## XPBD
+![](../assets/private/xpbd_1.png)
+一阶泰勒展开
+![](../assets/private/xpbd_2.png)
+![](../assets/private/xpbd_3.png)
+第一行结果
+![](../assets/private/xpbd_4.png)
+代入第二行
+![](../assets/private/xpbd_5.png)
+![](../assets/private/xpbd_6.png)
+
+## VBD
