@@ -56,6 +56,9 @@ $\nabla_{p_1} C = \frac{1}{|p_1 - p_2|}(x_1 - x_2, y_1 - y_2, z_1 - z_2) = \frac
 ![](../assets/private/xpbd_6.png)
 
 ## VBD
+![](../assets/private/vbd_1.png)
+![](../assets/private/vbd_2.png)
+![](../assets/private/vbd_3.png)
 ![](../assets/private/impuse.png)
 
 ## FLIP
@@ -98,3 +101,6 @@ BVHNode* BuildBVH(std::vector<Object*>& objectPointers, int start, int end) {
     return node;
 }
 ```
+
+### TOI
+![](../assets/private/toi.png)

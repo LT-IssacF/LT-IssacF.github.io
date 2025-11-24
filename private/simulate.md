@@ -17,6 +17,9 @@ $\nabla \cdot v = 0$
 ![](../assets/private/xpbd_6.png)
 
 ## VBD
+![](../assets/private/vbd_1.png)
+![](../assets/private/vbd_2.png)
+![](../assets/private/vbd_3.png)
 ![](../assets/private/impuse.png)
 
 ## DC-APIC
